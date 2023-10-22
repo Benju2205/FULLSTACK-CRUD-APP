@@ -9,14 +9,14 @@ app.use(express.json());
 app.use(cors());
 
 const db = mysql.createConnection({
-    // host: "localhost",
-    // user: "root",
-    // password: "",
-    // database: "crud"
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+    host: "13.228.225.19",
+    user: "root",
+    password: "",
+    database: "crud"
+    // host: process.env.MYSQL_HOST,
+    // user: process.env.MYSQL_USER,
+    // password: process.env.MYSQL_PASSWORD,
+    // database: process.env.MYSQL_DATABASE
 })
 
 app.get("/",(req,res)=>{

@@ -7,11 +7,11 @@ function CreateStudent() {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const navigate = useNavigate();
-    const apiUrl = process.env.CRUD_APP_BASE_URL;
+    // const apiUrl = process.env.CRUD_APP_BASE_URL;
 
     function handleSumbit(event){
         event.preventDefault();
-        axios.post(apiUrl,{name, email})
+        axios.post("https://fscrud-app.onrender.com/create",{name, email})
         .then(res=>{
             console.log(res.data);
             navigate('/');

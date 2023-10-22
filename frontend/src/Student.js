@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 function Student() {
     const [student,setStudent] = useState([]);
-    const apiUrl = process.env.CRUD_APP_BASE_URL;
+    // const apiUrl = process.env.CRUD_APP_BASE_URL;
 
     useEffect(()=>{
-        axios.get(apiUrl)
+        axios.get("https://fscrud-app.onrender.com/")
         .then(res=> setStudent(res.data))
         .catch(err=>console.log(err))
     }, [apiUrl] )
 
     const handleDelete = async(id) =>{
         try{
-            // await axios.delete('http://localhost:8081/student/'+id)
-            await axios.delete(apiUrl+id)
+            // await axios.delete(apiUrl+id)
+            await axios.delete('https://fscrud-app.onrender.com/student/'+id)
             window.location.reload()
         }catch(err){
             console.log(err);

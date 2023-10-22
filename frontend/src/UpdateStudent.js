@@ -8,11 +8,11 @@ function UpdateStudent() {
     const [email,setEmail] = useState('');
     const {id} = useParams();
     const navigate = useNavigate();
-    const apiUrl = process.env.CRUD_APP_BASE_URL;
+    // const apiUrl = process.env.CRUD_APP_BASE_URL;
 
     function handleSumbit(event){
         event.preventDefault();
-        axios.put(apiUrl+id, {name, email})
+        axios.put("https://fscrud-app.onrender.com/update/"+id, {name, email})
         .then(res=>{
             console.log(res.data);
             navigate('/');
