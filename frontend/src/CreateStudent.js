@@ -7,12 +7,11 @@ function CreateStudent() {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const navigate = useNavigate();
+    const apiUrl = process.env.CRUD_APP_BASE_URL;
 
     function handleSumbit(event){
         event.preventDefault();
-        // console.log("Name: ",name);
-        // console.log("Email: ",email);
-        axios.post("http://localhost:8081/create",{name, email})
+        axios.post(apiUrl,{name, email})
         .then(res=>{
             console.log(res.data);
             navigate('/');

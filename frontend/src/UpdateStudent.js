@@ -8,10 +8,11 @@ function UpdateStudent() {
     const [email,setEmail] = useState('');
     const {id} = useParams();
     const navigate = useNavigate();
+    const apiUrl = process.env.CRUD_APP_BASE_URL;
 
     function handleSumbit(event){
         event.preventDefault();
-        axios.put("http://localhost:8081/update/"+id, {name, email})
+        axios.put(apiUrl+id, {name, email})
         .then(res=>{
             console.log(res.data);
             navigate('/');
