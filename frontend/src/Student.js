@@ -10,7 +10,7 @@ function Student() {
         axios.get("https://fscrud-app.onrender.com/")
         .then(res=> setStudent(res.data))
         .catch(err=>console.log(err))
-    }, [apiUrl] )
+    }, [] )
 
     const handleDelete = async(id) =>{
         try{
