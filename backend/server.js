@@ -29,12 +29,10 @@ app.get("/",(req,res)=>{
 
 app.post('/create',(req,res)=>{
     const sql = "INSERT INTO student (Name, Email) VALUES (?)";
-    let data = req.body;
+    // let data = req.body;
     const values = [
-        // req.body.name,
-        // req.body.email
-        data.name,
-        data.email
+        req.body.name,
+        req.body.email
     ]
     db.query(sql, [values],(err, data)=>{
         if(err) return res.json(err);

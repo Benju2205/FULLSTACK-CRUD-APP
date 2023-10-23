@@ -11,7 +11,7 @@ function CreateStudent() {
 
     function handleSumbit(event){
         event.preventDefault();
-        axios.post("https://fscrud-app.onrender.com/create",{name, email})
+        axios.post("https://fscrud-app.onrender.com/create/",{name, email})
         .then(res=>{
             console.log(res.data);
             navigate('/');
